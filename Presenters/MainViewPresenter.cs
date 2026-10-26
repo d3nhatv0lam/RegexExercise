@@ -17,8 +17,12 @@ public class MainViewPresenter: IDisposable
         
         _view.UpdateFieldChanged += OnUpdateFieldChanged;
         _view.UpdateEmployeeClicked += OnUpdateEmployeeClicked;
-        
-        _view.LoadStaffs(_staffRepository.GetAll());
+        _view.Loaded += OnViewLoaded;
+    }
+
+    private async void OnViewLoaded(object? sender, EventArgs e)
+    {
+        _view.LoadStaffs(await _staffRepository.GetAll());
     }
 
     private void OnUpdateFieldChanged(object? sender, FieldChangedEventArgs e)
@@ -38,7 +42,7 @@ public class MainViewPresenter: IDisposable
         _view.SetFieldError(e.FieldName, errorMessage);
     }
 
-    private void OnUpdateEmployeeClicked(object? sender, Staff staff)
+    private async void OnUpdateEmployeeClicked(object? sender, Staff staff)
     {
         var context = new ValidationContext(staff);
         var results = new List<ValidationResult>();
@@ -60,8 +64,9 @@ public class MainViewPresenter: IDisposable
         }
         
         // update vào db
-        _staffRepository.Update(staff);
-        _view.LoadStaffs(_staffRepository.GetAll());
+        var updated = await _staffRepository.Update(staff);
+        if (updated)
+            _view.LoadStaffs(await _staffRepository.GetAll());
     }
 
     public void Dispose()

@@ -4,7 +4,7 @@ namespace RegexExercise.Repositories;
 
 public interface IStaffRepository
 {
-    IReadOnlyList<Staff> GetAll();
-    Staff? GetById(int id);
-    bool Update(Staff staff);
+    Task<IReadOnlyList<Staff>> GetAll();
+    Task<Staff?> GetById(int id);
+    Task<bool> Update(Staff staff);
 }

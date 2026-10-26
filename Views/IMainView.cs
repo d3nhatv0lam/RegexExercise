@@ -4,6 +4,7 @@ namespace RegexExercise.Views;
 
 public interface IMainView
 {
+    event EventHandler? Loaded;
     event EventHandler<FieldChangedEventArgs>? UpdateFieldChanged;
     
     event EventHandler<Staff>? UpdateEmployeeClicked;

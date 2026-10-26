@@ -7,25 +7,25 @@ namespace RegexExercise.Repositories;
 
 public class StaffRepository: IStaffRepository
 {
-    public IReadOnlyList<Staff> GetAll()
+    public async Task<IReadOnlyList<Staff>> GetAll()
     {
-        using var context = new AppDbContext();
-        return [.. context.Staff.AsNoTracking()];
+        await using var context = new AppDbContext();
+        return await context.Staff.AsNoTracking().ToListAsync();
     }
 
-    public Staff? GetById(int id)
+    public async Task<Staff?> GetById(int id)
     {
-        using var context = new AppDbContext();
-        return context.Staff.Find(id);
+        await using var context = new AppDbContext();
+        return await context.Staff.FindAsync(id);
     }
 
-    public bool Update(Staff staff)
+    public async Task<bool> Update(Staff staff)
     {
         try
         {
-            using var context = new AppDbContext();
+            await using var context = new AppDbContext();
             context.Staff.Update(staff);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
             return true;
         }
         catch (Exception ex)

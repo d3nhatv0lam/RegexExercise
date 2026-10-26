@@ -1,3 +1,4 @@
+using RegexExercise.Data;
 using RegexExercise.Presenters;
 using RegexExercise.Repositories;
 using RegexExercise.Views;
@@ -15,6 +16,11 @@ static class Program
         // To customize application configuration such as set high DPI settings or default font,
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
+
+        using (var db = new AppDbContext())
+        {
+            db.Database.EnsureCreated();
+        }
         
         var mainView = new MainView();
         var staffRepository = new StaffRepository();

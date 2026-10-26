@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using RegexExercise.Models;
 
 namespace RegexExercise.Views;
@@ -7,8 +8,16 @@ public partial class MainView : Form, IMainView
     public MainView()
     {
         InitializeComponent();
+        
     }
 
+    protected override void OnLoad(EventArgs e)
+    {
+        base.OnLoad(e);
+        Loaded?.Invoke(this, EventArgs.Empty);
+    }
+
+    public event EventHandler? Loaded;
     public event EventHandler<FieldChangedEventArgs>? UpdateFieldChanged;
     public event EventHandler<Staff>? UpdateEmployeeClicked;
     public void SetFieldError(string fieldName, string? errorMessage)
@@ -28,6 +37,9 @@ public partial class MainView : Form, IMainView
 
     public void LoadStaffs(IReadOnlyList<Staff> staffs)
     {
-        throw new NotImplementedException();
+        foreach (var staff in staffs)
+        {
+            Debug.WriteLine(staff.ToString());
+        }
     }
 }

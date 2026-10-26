@@ -30,4 +30,9 @@ public class Staff
     
     [RegexValidation(@"^.+\.(jpg|jpeg|png|bmp)$", ErrorMessage = "File ảnh không đúng định dạng")]
     public string Photo { get; set; }
+
+    public override string ToString()
+    {
+        return $"Id: {Id}, FullName: {FullName}, Email: {Email}, PhoneNumber: {PhoneNumber}, StartWorkDay: {StartWorkDay}, Photo: {Photo}";
+    }
 }
