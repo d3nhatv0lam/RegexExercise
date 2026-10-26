@@ -8,7 +8,7 @@ public partial class MainView : Form, IMainView
     public MainView()
     {
         InitializeComponent();
-        
+
     }
 
     protected override void OnLoad(EventArgs e)
