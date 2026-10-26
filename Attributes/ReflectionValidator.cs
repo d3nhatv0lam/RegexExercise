@@ -61,7 +61,7 @@ public static class ReflectionValidator
         return null;
     }
     
-    public static Dictionary<string, IReadOnlyList<string>> ValidateProperty_UseValidator(object instance)
+    public static Dictionary<string, IReadOnlyList<string>> ValidateObject_UseValidator(object instance)
     {
         var context = new ValidationContext(instance);
         var results = new List<ValidationResult>();

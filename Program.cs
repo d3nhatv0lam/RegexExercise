@@ -23,7 +23,7 @@ static class Program
         }
         
         var mainView = new MainView();
-        var staffRepository = new StaffRepository();
+        IStaffRepository staffRepository = new StaffRepository();
         var presenter = new MainViewPresenter(mainView, staffRepository);
         
         Application.Run(mainView);
