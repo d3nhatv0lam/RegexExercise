@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using RegexExercise.Models;
+using RegexExercise.Repositories;
 using RegexExercise.Views;
 
 namespace RegexExercise.Presenters;
@@ -7,13 +8,17 @@ namespace RegexExercise.Presenters;
 public class MainViewPresenter: IDisposable
 {
     private readonly IMainView _view;
+    private readonly IStaffRepository _staffRepository;
     
-    public MainViewPresenter(IMainView view)
+    public MainViewPresenter(IMainView view, IStaffRepository staffRepository)
     {
         _view = view;
-    
+        _staffRepository = staffRepository;
+        
         _view.UpdateFieldChanged += OnUpdateFieldChanged;
         _view.UpdateEmployeeClicked += OnUpdateEmployeeClicked;
+        
+        _view.LoadStaffs(_staffRepository.GetAll());
     }
 
     private void OnUpdateFieldChanged(object? sender, FieldChangedEventArgs e)
@@ -55,7 +60,8 @@ public class MainViewPresenter: IDisposable
         }
         
         // update vào db
-        throw new NotImplementedException();
+        _staffRepository.Update(staff);
+        _view.LoadStaffs(_staffRepository.GetAll());
     }
 
     public void Dispose()

@@ -1,4 +1,5 @@
 using RegexExercise.Presenters;
+using RegexExercise.Repositories;
 using RegexExercise.Views;
 
 namespace RegexExercise;
@@ -16,7 +17,8 @@ static class Program
         ApplicationConfiguration.Initialize();
         
         var mainView = new MainView();
-        var presenter = new MainViewPresenter(mainView);
+        var staffRepository = new StaffRepository();
+        var presenter = new MainViewPresenter(mainView, staffRepository);
         
         Application.Run(mainView);
         

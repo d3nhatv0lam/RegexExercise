@@ -15,5 +15,5 @@ public interface IMainView
     
     void UpdateUpdateStatus(string message);
     
-    void LoadData(IReadOnlyList<Staff> employees);
+    void LoadStaffs(IReadOnlyList<Staff> staffs);
 }

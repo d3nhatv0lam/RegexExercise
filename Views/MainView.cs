@@ -26,7 +26,7 @@ public partial class MainView : Form, IMainView
         throw new NotImplementedException();
     }
 
-    public void LoadData(IReadOnlyList<Staff> employees)
+    public void LoadStaffs(IReadOnlyList<Staff> staffs)
     {
         throw new NotImplementedException();
     }
