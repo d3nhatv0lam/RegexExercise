@@ -1,4 +1,4 @@
-namespace RegexExercise.Views;
+﻿namespace RegexExercise.Views;
 
 partial class MainView
 {
@@ -58,33 +58,28 @@ partial class MainView
         // 
         // lblTableName
         // 
-        lblTableName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-        lblTableName.Location = new System.Drawing.Point(16, 16);
+        lblTableName.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+        lblTableName.Location = new Point(16, 16);
         lblTableName.Name = "lblTableName";
-        lblTableName.Size = new System.Drawing.Size(300, 32);
+        lblTableName.Size = new Size(300, 32);
         lblTableName.TabIndex = 0;
         lblTableName.Text = "DANH SÁCH NHÂN VIÊN";
         // 
         // tblStaff
         // 
-        tblStaff.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right));
+        tblStaff.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         tblStaff.Bordered = true;
         tblStaff.EmptyText = "Chưa có dữ liệu nhân viên";
         tblStaff.Gap = 8;
-        tblStaff.Location = new System.Drawing.Point(16, 56);
+        tblStaff.Gaps = new Size(8, 8);
+        tblStaff.Location = new Point(16, 56);
         tblStaff.Name = "tblStaff";
-        tblStaff.Size = new System.Drawing.Size(680, 592);
+        tblStaff.Size = new Size(825, 625);
         tblStaff.TabIndex = 1;
-        tblStaff.Columns.Add(new AntdUI.Column("Id", "ID", AntdUI.ColumnAlign.Center) { Width = "60" });
-        tblStaff.Columns.Add(new AntdUI.Column("FullName", "Họ và Tên") { Width = "150" });
-        tblStaff.Columns.Add(new AntdUI.Column("Email", "Email") { Width = "180" });
-        tblStaff.Columns.Add(new AntdUI.Column("PhoneNumber", "Số Điện Thoại", AntdUI.ColumnAlign.Center) { Width = "120" });
-        tblStaff.Columns.Add(new AntdUI.Column("StartWorkDay", "Ngày Vào Làm", AntdUI.ColumnAlign.Center) { Width = "120", DisplayFormat = "yyyy-MM-dd" });
-        tblStaff.Columns.Add(new AntdUI.Column("Photo", "Ảnh") { Width = "110" });
         // 
         // panelDetail
         // 
-        panelDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right));
+        panelDetail.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
         panelDetail.BorderWidth = 1F;
         panelDetail.Controls.Add(lblErrorPhoto);
         panelDetail.Controls.Add(lblErrorPhoneNumber);
@@ -108,67 +103,71 @@ partial class MainView
         panelDetail.Controls.Add(btnSelectPhoto);
         panelDetail.Controls.Add(picAvatar);
         panelDetail.Controls.Add(lblStaffForm);
-        panelDetail.Location = new System.Drawing.Point(712, 16);
+        panelDetail.Location = new Point(838, 16);
         panelDetail.Name = "panelDetail";
         panelDetail.Radius = 8;
-        panelDetail.Size = new System.Drawing.Size(432, 632);
+        panelDetail.Size = new Size(451, 665);
         panelDetail.TabIndex = 2;
         panelDetail.Text = "panelDetail";
         // 
         // lblErrorPhoto
         // 
-        lblErrorPhoto.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic);
-        lblErrorPhoto.ForeColor = System.Drawing.Color.FromArgb(255, 77, 79);
-        lblErrorPhoto.Location = new System.Drawing.Point(160, 492);
+        lblErrorPhoto.BackColor = SystemColors.Window;
+        lblErrorPhoto.Font = new Font("Segoe UI", 8.25F, FontStyle.Italic);
+        lblErrorPhoto.ForeColor = Color.FromArgb(255, 77, 79);
+        lblErrorPhoto.Location = new Point(121, 533);
         lblErrorPhoto.Name = "lblErrorPhoto";
-        lblErrorPhoto.Size = new System.Drawing.Size(252, 20);
+        lblErrorPhoto.Size = new Size(316, 20);
         lblErrorPhoto.TabIndex = 23;
-        lblErrorPhoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
         lblErrorPhoto.Text = "";
+        lblErrorPhoto.TextAlign = ContentAlignment.MiddleRight;
         lblErrorPhoto.Visible = false;
         // 
         // lblErrorPhoneNumber
         // 
-        lblErrorPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic);
-        lblErrorPhoneNumber.ForeColor = System.Drawing.Color.FromArgb(255, 77, 79);
-        lblErrorPhoneNumber.Location = new System.Drawing.Point(160, 368);
+        lblErrorPhoneNumber.BackColor = SystemColors.Window;
+        lblErrorPhoneNumber.Font = new Font("Segoe UI", 8.25F, FontStyle.Italic);
+        lblErrorPhoneNumber.ForeColor = Color.FromArgb(255, 77, 79);
+        lblErrorPhoneNumber.Location = new Point(106, 405);
         lblErrorPhoneNumber.Name = "lblErrorPhoneNumber";
-        lblErrorPhoneNumber.Size = new System.Drawing.Size(252, 20);
+        lblErrorPhoneNumber.Size = new Size(325, 20);
         lblErrorPhoneNumber.TabIndex = 22;
-        lblErrorPhoneNumber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
         lblErrorPhoneNumber.Text = "";
+        lblErrorPhoneNumber.TextAlign = ContentAlignment.MiddleRight;
         lblErrorPhoneNumber.Visible = false;
         // 
         // lblErrorEmail
         // 
-        lblErrorEmail.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic);
-        lblErrorEmail.ForeColor = System.Drawing.Color.FromArgb(255, 77, 79);
-        lblErrorEmail.Location = new System.Drawing.Point(160, 306);
+        lblErrorEmail.BackColor = SystemColors.Window;
+        lblErrorEmail.Font = new Font("Segoe UI", 8.25F, FontStyle.Italic);
+        lblErrorEmail.ForeColor = Color.FromArgb(255, 77, 79);
+        lblErrorEmail.Location = new Point(95, 341);
         lblErrorEmail.Name = "lblErrorEmail";
-        lblErrorEmail.Size = new System.Drawing.Size(252, 20);
+        lblErrorEmail.Size = new Size(327, 20);
         lblErrorEmail.TabIndex = 21;
-        lblErrorEmail.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
         lblErrorEmail.Text = "";
+        lblErrorEmail.TextAlign = ContentAlignment.MiddleRight;
         lblErrorEmail.Visible = false;
         // 
         // lblErrorFullName
         // 
-        lblErrorFullName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic);
-        lblErrorFullName.ForeColor = System.Drawing.Color.FromArgb(255, 77, 79);
-        lblErrorFullName.Location = new System.Drawing.Point(160, 244);
+        lblErrorFullName.BackColor = SystemColors.Window;
+        lblErrorFullName.Font = new Font("Segoe UI", 8.25F, FontStyle.Italic);
+        lblErrorFullName.ForeColor = Color.FromArgb(255, 77, 79);
+        lblErrorFullName.Location = new Point(95, 277);
         lblErrorFullName.Name = "lblErrorFullName";
-        lblErrorFullName.Size = new System.Drawing.Size(252, 20);
+        lblErrorFullName.Size = new Size(327, 20);
         lblErrorFullName.TabIndex = 20;
-        lblErrorFullName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
         lblErrorFullName.Text = "";
+        lblErrorFullName.TextAlign = ContentAlignment.MiddleRight;
         lblErrorFullName.Visible = false;
         // 
         // btnSave
         // 
-        btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right));
-        btnSave.Location = new System.Drawing.Point(320, 574);
+        btnSave.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+        btnSave.Location = new Point(339, 624);
         btnSave.Name = "btnSave";
-        btnSave.Size = new System.Drawing.Size(92, 36);
+        btnSave.Size = new Size(92, 36);
         btnSave.TabIndex = 17;
         btnSave.Text = "Lưu";
         btnSave.Type = AntdUI.TTypeMini.Primary;
@@ -176,173 +175,182 @@ partial class MainView
         // 
         // btnEdit
         // 
-        btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right));
-        btnEdit.Location = new System.Drawing.Point(320, 574);
+        btnEdit.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+        btnEdit.Location = new Point(339, 624);
         btnEdit.Name = "btnEdit";
-        btnEdit.Size = new System.Drawing.Size(92, 36);
+        btnEdit.Size = new Size(92, 36);
         btnEdit.TabIndex = 16;
         btnEdit.Text = "Chỉnh sửa";
-        btnEdit.Visible = true;
         // 
         // btnCancel
         // 
-        btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right));
-        btnCancel.Location = new System.Drawing.Point(212, 574);
+        btnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+        btnCancel.Location = new Point(233, 624);
         btnCancel.Name = "btnCancel";
-        btnCancel.Size = new System.Drawing.Size(100, 36);
+        btnCancel.Size = new Size(100, 36);
         btnCancel.TabIndex = 15;
         btnCancel.Text = "Hủy";
         btnCancel.Visible = false;
         // 
         // txtPhoto
         // 
-        txtPhoto.Location = new System.Drawing.Point(20, 514);
+        txtPhoto.Location = new Point(20, 559);
         txtPhoto.Name = "txtPhoto";
         txtPhoto.PlaceholderText = "Tên tệp ảnh (vd: avatar.png)";
         txtPhoto.ReadOnly = true;
-        txtPhoto.Size = new System.Drawing.Size(392, 32);
+        txtPhoto.Size = new Size(422, 32);
         txtPhoto.TabIndex = 14;
         // 
         // lblImage
         // 
-        lblImage.Font = new System.Drawing.Font("Segoe UI", 9F);
-        lblImage.Location = new System.Drawing.Point(20, 492);
+        lblImage.BackColor = SystemColors.Window;
+        lblImage.Font = new Font("Segoe UI", 9F);
+        lblImage.Location = new Point(20, 533);
         lblImage.Name = "lblImage";
-        lblImage.Size = new System.Drawing.Size(150, 20);
+        lblImage.Size = new Size(107, 20);
         lblImage.TabIndex = 13;
         lblImage.Text = "Tên tệp ảnh:";
         // 
         // dpStartWorkDay
         // 
         dpStartWorkDay.Format = "dd/MM/yyyy";
-        dpStartWorkDay.Location = new System.Drawing.Point(20, 452);
+        dpStartWorkDay.Location = new Point(20, 495);
         dpStartWorkDay.Name = "dpStartWorkDay";
         dpStartWorkDay.ReadOnly = true;
-        dpStartWorkDay.Size = new System.Drawing.Size(392, 32);
+        dpStartWorkDay.Size = new Size(417, 32);
         dpStartWorkDay.TabIndex = 12;
         // 
         // lblStartDate
         // 
-        lblStartDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-        lblStartDate.Location = new System.Drawing.Point(20, 430);
+        lblStartDate.BackColor = SystemColors.Window;
+        lblStartDate.Font = new Font("Segoe UI", 9F);
+        lblStartDate.Location = new Point(20, 469);
         lblStartDate.Name = "lblStartDate";
-        lblStartDate.Size = new System.Drawing.Size(200, 20);
+        lblStartDate.Size = new Size(159, 20);
         lblStartDate.TabIndex = 11;
         lblStartDate.Text = "Ngày bắt đầu làm việc:";
         // 
         // txtPhoneNumber
         // 
-        txtPhoneNumber.Location = new System.Drawing.Point(20, 390);
+        txtPhoneNumber.Location = new Point(20, 431);
         txtPhoneNumber.MaxLength = 10;
         txtPhoneNumber.Name = "txtPhoneNumber";
         txtPhoneNumber.PlaceholderText = "09xxxxxxxx";
         txtPhoneNumber.ReadOnly = true;
-        txtPhoneNumber.Size = new System.Drawing.Size(392, 32);
+        txtPhoneNumber.Size = new Size(417, 32);
         txtPhoneNumber.TabIndex = 10;
         // 
         // lblPhoneNumber
         // 
-        lblPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 9F);
-        lblPhoneNumber.Location = new System.Drawing.Point(20, 368);
+        lblPhoneNumber.BackColor = SystemColors.Window;
+        lblPhoneNumber.Font = new Font("Segoe UI", 9F);
+        lblPhoneNumber.Location = new Point(20, 405);
         lblPhoneNumber.Name = "lblPhoneNumber";
-        lblPhoneNumber.Size = new System.Drawing.Size(150, 20);
+        lblPhoneNumber.Size = new Size(107, 20);
         lblPhoneNumber.TabIndex = 9;
         lblPhoneNumber.Text = "Số điện thoại:";
         // 
         // txtEmail
         // 
-        txtEmail.Location = new System.Drawing.Point(20, 328);
+        txtEmail.Location = new Point(20, 367);
         txtEmail.Name = "txtEmail";
         txtEmail.PlaceholderText = "example@domain.com";
         txtEmail.ReadOnly = true;
-        txtEmail.Size = new System.Drawing.Size(392, 32);
+        txtEmail.Size = new Size(417, 32);
         txtEmail.TabIndex = 8;
         // 
         // lblEmail
         // 
-        lblEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-        lblEmail.Location = new System.Drawing.Point(20, 306);
+        lblEmail.BackColor = SystemColors.Window;
+        lblEmail.Font = new Font("Segoe UI", 9F);
+        lblEmail.Location = new Point(20, 341);
         lblEmail.Name = "lblEmail";
-        lblEmail.Size = new System.Drawing.Size(150, 20);
+        lblEmail.Size = new Size(60, 20);
         lblEmail.TabIndex = 7;
         lblEmail.Text = "Email:";
         // 
         // txtFullName
         // 
-        txtFullName.Location = new System.Drawing.Point(20, 266);
+        txtFullName.Location = new Point(20, 303);
         txtFullName.Name = "txtFullName";
         txtFullName.PlaceholderText = "Nhập họ và tên...";
         txtFullName.ReadOnly = true;
-        txtFullName.Size = new System.Drawing.Size(392, 32);
+        txtFullName.Size = new Size(417, 32);
         txtFullName.TabIndex = 6;
         // 
         // lblStaffName
         // 
-        lblStaffName.Font = new System.Drawing.Font("Segoe UI", 9F);
-        lblStaffName.Location = new System.Drawing.Point(20, 244);
+        lblStaffName.BackColor = SystemColors.Window;
+        lblStaffName.Font = new Font("Segoe UI", 9F);
+        lblStaffName.Location = new Point(20, 277);
         lblStaffName.Name = "lblStaffName";
-        lblStaffName.Size = new System.Drawing.Size(150, 20);
+        lblStaffName.Size = new Size(107, 20);
         lblStaffName.TabIndex = 5;
         lblStaffName.Text = "Họ và tên:";
         // 
         // txtStaffId
         // 
-        txtStaffId.Location = new System.Drawing.Point(20, 204);
+        txtStaffId.Location = new Point(16, 239);
         txtStaffId.Name = "txtStaffId";
         txtStaffId.PlaceholderText = "Mã nhân viên (tự động)";
         txtStaffId.ReadOnly = true;
-        txtStaffId.Size = new System.Drawing.Size(392, 32);
+        txtStaffId.Size = new Size(421, 32);
         txtStaffId.TabIndex = 4;
         // 
         // lblStaffId
         // 
-        lblStaffId.Font = new System.Drawing.Font("Segoe UI", 9F);
-        lblStaffId.Location = new System.Drawing.Point(20, 182);
+        lblStaffId.BackColor = SystemColors.Window;
+        lblStaffId.Font = new Font("Segoe UI", 9F);
+        lblStaffId.Location = new Point(20, 213);
         lblStaffId.Name = "lblStaffId";
-        lblStaffId.Size = new System.Drawing.Size(150, 20);
+        lblStaffId.ShadowOpacity = 0F;
+        lblStaffId.Size = new Size(150, 20);
         lblStaffId.TabIndex = 3;
         lblStaffId.Text = "Mã nhân viên (ID):";
         // 
         // btnSelectPhoto
         // 
+        btnSelectPhoto.Type = AntdUI.TTypeMini.Primary;
         btnSelectPhoto.Enabled = false;
-        btnSelectPhoto.Location = new System.Drawing.Point(156, 144);
+        btnSelectPhoto.Location = new Point(180, 168);
         btnSelectPhoto.Name = "btnSelectPhoto";
-        btnSelectPhoto.Size = new System.Drawing.Size(120, 30);
+        btnSelectPhoto.Size = new Size(120, 30);
         btnSelectPhoto.TabIndex = 2;
         btnSelectPhoto.Text = "Chọn ảnh...";
         // 
         // picAvatar
         // 
-        picAvatar.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-        picAvatar.Location = new System.Drawing.Point(171, 46);
+        picAvatar.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+        picAvatar.Location = new Point(177, 46);
         picAvatar.Name = "picAvatar";
         picAvatar.Radius = 45;
         picAvatar.Round = true;
-        picAvatar.Size = new System.Drawing.Size(90, 90);
+        picAvatar.Size = new Size(121, 116);
         picAvatar.TabIndex = 1;
-        picAvatar.Text = "Ảnh";
+        picAvatar.Text = "Ả";
         // 
         // lblStaffForm
         // 
-        lblStaffForm.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-        lblStaffForm.Location = new System.Drawing.Point(16, 14);
+        lblStaffForm.BackColor = SystemColors.Window;
+        lblStaffForm.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+        lblStaffForm.Location = new Point(16, 14);
         lblStaffForm.Name = "lblStaffForm";
-        lblStaffForm.Size = new System.Drawing.Size(400, 26);
+        lblStaffForm.Size = new Size(400, 26);
         lblStaffForm.TabIndex = 0;
         lblStaffForm.Text = "THÔNG TIN CHI TIẾT";
         // 
         // MainView
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(1160, 664);
+        AutoScaleDimensions = new SizeF(8F, 20F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(1305, 697);
         Controls.Add(panelDetail);
         Controls.Add(tblStaff);
         Controls.Add(lblTableName);
-        Font = new System.Drawing.Font("Segoe UI", 9F);
-        MinimumSize = new System.Drawing.Size(1020, 680);
-        StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+        Font = new Font("Segoe UI", 9F);
+        MinimumSize = new Size(1020, 680);
+        Name = "MainView";
+        StartPosition = FormStartPosition.CenterScreen;
         Text = "Quản Lý Nhân Viên";
         panelDetail.ResumeLayout(false);
         ResumeLayout(false);

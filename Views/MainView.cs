@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using AntdUI;
 using RegexExercise.Models;
 
@@ -14,6 +14,7 @@ public partial class MainView : Form, IMainView
     public MainView()
     {
         InitializeComponent();
+        panelDetail.Visible = false;
         SetupUIEvents();
         SetEditMode(false);
 
@@ -38,6 +39,14 @@ public partial class MainView : Form, IMainView
         btnEdit.Click += BtnEdit_Click;
         btnCancel.Click += BtnCancel_Click;
         btnSave.Click += BtnSave_Click;
+        dpStartWorkDay.VerifyChar += (s, e) => e.Result = false;
+        dpStartWorkDay.VerifyKeyboard += (s, e) =>
+        {
+            if (e.KeyData == Keys.Back || e.KeyData == Keys.Delete)
+            {
+                e.Result = false;
+            }
+        };
     }
 
     private void SetupDebounce()
@@ -124,7 +133,6 @@ public partial class MainView : Form, IMainView
     private void BtnSave_Click(object? sender, EventArgs e)
     {
         UpdateEmployeeClicked?.Invoke(this, GetStaffFromForm());
-        SetEditMode(false);
     }
 
     private void TblStaff_CellClick(object? sender, AntdUI.TableClickEventArgs e)
@@ -133,6 +141,8 @@ public partial class MainView : Form, IMainView
         {
             _selectedStaff = staff;
             DisplayStaff(staff);
+            panelDetail.Visible = true;
+            SetEditMode(false);
         }
     }
 
@@ -232,11 +242,14 @@ public partial class MainView : Form, IMainView
 
     public void UpdateChangeStatus(bool isSuccess, string message)
     {
-        AntdUI.Message.info(this, message);
-        if (!isSuccess)
+        AntdUI.Message.open(new AntdUI.Message.Config(this, message, isSuccess ? AntdUI.TType.Success : AntdUI.TType.Error)
         {
-            if (_selectedStaff is not null)
-                DisplayStaff(_selectedStaff);
+            ShowInWindow = true
+        });
+
+        if (isSuccess)
+        {
+            SetEditMode(false);
         }
     }
 
