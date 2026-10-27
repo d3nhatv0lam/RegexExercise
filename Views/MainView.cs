@@ -256,6 +256,16 @@ public partial class MainView : Form, IMainView
     public void LoadStaffs(IReadOnlyList<Staff> staffs)
     {
         tblStaff.Binding(new AntdUI.AntList<Staff>(staffs.ToList()));
+
+        if (_selectedStaff is not null)
+        {
+            var updated = staffs.FirstOrDefault(s => s.Id == _selectedStaff.Id);
+            if (updated is not null)
+            {
+                _selectedStaff = updated;
+                DisplayStaff(updated);
+            }
+        }
     }
 
     private Staff GetStaffFromForm()
