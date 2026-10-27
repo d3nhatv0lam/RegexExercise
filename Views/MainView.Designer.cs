@@ -1,4 +1,4 @@
-﻿namespace RegexExercise.Views;
+namespace RegexExercise.Views;
 
 partial class MainView
 {
@@ -23,218 +23,328 @@ partial class MainView
     #region Windows Form Designer generated code
 
     /// <summary>
-    ///  Required method for Designer support - do not modify
-    ///  the contents of this method with the code editor.
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent()
     {
         lblTableName = new AntdUI.Label();
         tblStaff = new AntdUI.Table();
-        lblStaffForm = new AntdUI.Label();
-        btnEdit = new AntdUI.Button();
+        panelDetail = new AntdUI.Panel();
+        lblErrorPhoto = new AntdUI.Label();
+        lblErrorPhoneNumber = new AntdUI.Label();
+        lblErrorEmail = new AntdUI.Label();
+        lblErrorFullName = new AntdUI.Label();
         btnSave = new AntdUI.Button();
+        btnEdit = new AntdUI.Button();
         btnCancel = new AntdUI.Button();
-        panel1 = new AntdUI.Panel();
-        image3d1 = new AntdUI.Image3D();
-        datePicker1 = new AntdUI.DatePicker();
-        input3 = new AntdUI.Input();
-        input2 = new AntdUI.Input();
-        input1 = new AntdUI.Input();
+        txtPhoto = new AntdUI.Input();
         lblImage = new AntdUI.Label();
+        dpStartWorkDay = new AntdUI.DatePicker();
         lblStartDate = new AntdUI.Label();
+        txtPhoneNumber = new AntdUI.Input();
         lblPhoneNumber = new AntdUI.Label();
+        txtEmail = new AntdUI.Input();
         lblEmail = new AntdUI.Label();
+        txtFullName = new AntdUI.Input();
         lblStaffName = new AntdUI.Label();
+        txtStaffId = new AntdUI.Input();
         lblStaffId = new AntdUI.Label();
-        input4 = new AntdUI.Input();
-        panel1.SuspendLayout();
+        btnSelectPhoto = new AntdUI.Button();
+        picAvatar = new AntdUI.Avatar();
+        lblStaffForm = new AntdUI.Label();
+        panelDetail.SuspendLayout();
         SuspendLayout();
         // 
         // lblTableName
         // 
-        lblTableName.HandDragFolder = false;
-        lblTableName.Location = new Point(12, 12);
+        lblTableName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+        lblTableName.Location = new System.Drawing.Point(16, 16);
         lblTableName.Name = "lblTableName";
-        lblTableName.Size = new Size(204, 29);
+        lblTableName.Size = new System.Drawing.Size(300, 32);
         lblTableName.TabIndex = 0;
         lblTableName.Text = "DANH SÁCH NHÂN VIÊN";
-        lblTableName.UseWaitCursor = true;
         // 
         // tblStaff
         // 
-        tblStaff.Gap = 12;
-        tblStaff.Location = new Point(12, 56);
+        tblStaff.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right));
+        tblStaff.Bordered = true;
+        tblStaff.EmptyText = "Chưa có dữ liệu nhân viên";
+        tblStaff.Gap = 8;
+        tblStaff.Location = new System.Drawing.Point(16, 56);
         tblStaff.Name = "tblStaff";
-        tblStaff.Size = new Size(660, 562);
+        tblStaff.Size = new System.Drawing.Size(680, 592);
         tblStaff.TabIndex = 1;
-        tblStaff.Text = "table1";
+        tblStaff.Columns.Add(new AntdUI.Column("Id", "ID", AntdUI.ColumnAlign.Center) { Width = "60" });
+        tblStaff.Columns.Add(new AntdUI.Column("FullName", "Họ và Tên") { Width = "150" });
+        tblStaff.Columns.Add(new AntdUI.Column("Email", "Email") { Width = "180" });
+        tblStaff.Columns.Add(new AntdUI.Column("PhoneNumber", "Số Điện Thoại", AntdUI.ColumnAlign.Center) { Width = "120" });
+        tblStaff.Columns.Add(new AntdUI.Column("StartWorkDay", "Ngày Vào Làm", AntdUI.ColumnAlign.Center) { Width = "120", DisplayFormat = "yyyy-MM-dd" });
+        tblStaff.Columns.Add(new AntdUI.Column("Photo", "Ảnh") { Width = "110" });
         // 
-        // lblStaffForm
+        // panelDetail
         // 
-        lblStaffForm.HandDragFolder = false;
-        lblStaffForm.Location = new Point(694, 12);
-        lblStaffForm.Name = "lblStaffForm";
-        lblStaffForm.Size = new Size(204, 29);
-        lblStaffForm.TabIndex = 3;
-        lblStaffForm.Text = "THÔNG TIN NHÂN VIÊN";
-        lblStaffForm.UseWaitCursor = true;
+        panelDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right));
+        panelDetail.BorderWidth = 1F;
+        panelDetail.Controls.Add(lblErrorPhoto);
+        panelDetail.Controls.Add(lblErrorPhoneNumber);
+        panelDetail.Controls.Add(lblErrorEmail);
+        panelDetail.Controls.Add(lblErrorFullName);
+        panelDetail.Controls.Add(btnSave);
+        panelDetail.Controls.Add(btnEdit);
+        panelDetail.Controls.Add(btnCancel);
+        panelDetail.Controls.Add(txtPhoto);
+        panelDetail.Controls.Add(lblImage);
+        panelDetail.Controls.Add(dpStartWorkDay);
+        panelDetail.Controls.Add(lblStartDate);
+        panelDetail.Controls.Add(txtPhoneNumber);
+        panelDetail.Controls.Add(lblPhoneNumber);
+        panelDetail.Controls.Add(txtEmail);
+        panelDetail.Controls.Add(lblEmail);
+        panelDetail.Controls.Add(txtFullName);
+        panelDetail.Controls.Add(lblStaffName);
+        panelDetail.Controls.Add(txtStaffId);
+        panelDetail.Controls.Add(lblStaffId);
+        panelDetail.Controls.Add(btnSelectPhoto);
+        panelDetail.Controls.Add(picAvatar);
+        panelDetail.Controls.Add(lblStaffForm);
+        panelDetail.Location = new System.Drawing.Point(712, 16);
+        panelDetail.Name = "panelDetail";
+        panelDetail.Radius = 8;
+        panelDetail.Size = new System.Drawing.Size(432, 632);
+        panelDetail.TabIndex = 2;
+        panelDetail.Text = "panelDetail";
         // 
-        // btnEdit
+        // lblErrorPhoto
         // 
-        btnEdit.Location = new Point(1014, 624);
-        btnEdit.Name = "btnEdit";
-        btnEdit.Size = new Size(94, 29);
-        btnEdit.TabIndex = 4;
-        btnEdit.Text = "Chỉnh sửa";
+        lblErrorPhoto.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic);
+        lblErrorPhoto.ForeColor = System.Drawing.Color.FromArgb(255, 77, 79);
+        lblErrorPhoto.Location = new System.Drawing.Point(160, 492);
+        lblErrorPhoto.Name = "lblErrorPhoto";
+        lblErrorPhoto.Size = new System.Drawing.Size(252, 20);
+        lblErrorPhoto.TabIndex = 23;
+        lblErrorPhoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+        lblErrorPhoto.Text = "";
+        lblErrorPhoto.Visible = false;
+        // 
+        // lblErrorPhoneNumber
+        // 
+        lblErrorPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic);
+        lblErrorPhoneNumber.ForeColor = System.Drawing.Color.FromArgb(255, 77, 79);
+        lblErrorPhoneNumber.Location = new System.Drawing.Point(160, 368);
+        lblErrorPhoneNumber.Name = "lblErrorPhoneNumber";
+        lblErrorPhoneNumber.Size = new System.Drawing.Size(252, 20);
+        lblErrorPhoneNumber.TabIndex = 22;
+        lblErrorPhoneNumber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+        lblErrorPhoneNumber.Text = "";
+        lblErrorPhoneNumber.Visible = false;
+        // 
+        // lblErrorEmail
+        // 
+        lblErrorEmail.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic);
+        lblErrorEmail.ForeColor = System.Drawing.Color.FromArgb(255, 77, 79);
+        lblErrorEmail.Location = new System.Drawing.Point(160, 306);
+        lblErrorEmail.Name = "lblErrorEmail";
+        lblErrorEmail.Size = new System.Drawing.Size(252, 20);
+        lblErrorEmail.TabIndex = 21;
+        lblErrorEmail.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+        lblErrorEmail.Text = "";
+        lblErrorEmail.Visible = false;
+        // 
+        // lblErrorFullName
+        // 
+        lblErrorFullName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic);
+        lblErrorFullName.ForeColor = System.Drawing.Color.FromArgb(255, 77, 79);
+        lblErrorFullName.Location = new System.Drawing.Point(160, 244);
+        lblErrorFullName.Name = "lblErrorFullName";
+        lblErrorFullName.Size = new System.Drawing.Size(252, 20);
+        lblErrorFullName.TabIndex = 20;
+        lblErrorFullName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+        lblErrorFullName.Text = "";
+        lblErrorFullName.Visible = false;
         // 
         // btnSave
         // 
-        btnSave.Location = new Point(1014, 624);
+        btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right));
+        btnSave.Location = new System.Drawing.Point(320, 574);
         btnSave.Name = "btnSave";
-        btnSave.Size = new Size(94, 29);
-        btnSave.TabIndex = 4;
+        btnSave.Size = new System.Drawing.Size(92, 36);
+        btnSave.TabIndex = 17;
         btnSave.Text = "Lưu";
-        btnSave.TextCenterHasIcon = true;
+        btnSave.Type = AntdUI.TTypeMini.Primary;
+        btnSave.Visible = false;
+        // 
+        // btnEdit
+        // 
+        btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right));
+        btnEdit.Location = new System.Drawing.Point(320, 574);
+        btnEdit.Name = "btnEdit";
+        btnEdit.Size = new System.Drawing.Size(92, 36);
+        btnEdit.TabIndex = 16;
+        btnEdit.Text = "Chỉnh sửa";
+        btnEdit.Visible = true;
         // 
         // btnCancel
         // 
-        btnCancel.Location = new Point(914, 624);
+        btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right));
+        btnCancel.Location = new System.Drawing.Point(212, 574);
         btnCancel.Name = "btnCancel";
-        btnCancel.Size = new Size(94, 29);
-        btnCancel.TabIndex = 5;
+        btnCancel.Size = new System.Drawing.Size(100, 36);
+        btnCancel.TabIndex = 15;
         btnCancel.Text = "Hủy";
-        btnCancel.TextCenterHasIcon = true;
+        btnCancel.Visible = false;
         // 
-        // panel1
+        // txtPhoto
         // 
-        panel1.Controls.Add(input4);
-        panel1.Controls.Add(image3d1);
-        panel1.Controls.Add(datePicker1);
-        panel1.Controls.Add(input3);
-        panel1.Controls.Add(input2);
-        panel1.Controls.Add(input1);
-        panel1.Controls.Add(lblImage);
-        panel1.Controls.Add(lblStartDate);
-        panel1.Controls.Add(lblPhoneNumber);
-        panel1.Controls.Add(lblEmail);
-        panel1.Controls.Add(lblStaffName);
-        panel1.Controls.Add(lblStaffId);
-        panel1.Location = new Point(694, 56);
-        panel1.Name = "panel1";
-        panel1.Size = new Size(414, 562);
-        panel1.TabIndex = 6;
-        panel1.Text = "panel1";
-        // 
-        // image3d1
-        // 
-        image3d1.Location = new Point(99, 340);
-        image3d1.Name = "image3d1";
-        image3d1.Size = new Size(215, 198);
-        image3d1.TabIndex = 13;
-        image3d1.Text = "image3d1";
-        // 
-        // datePicker1
-        // 
-        datePicker1.Location = new Point(10, 276);
-        datePicker1.Name = "datePicker1";
-        datePicker1.Size = new Size(276, 29);
-        datePicker1.TabIndex = 11;
-        // 
-        // input3
-        // 
-        input3.Location = new Point(6, 159);
-        input3.Name = "input3";
-        input3.Size = new Size(276, 29);
-        input3.TabIndex = 8;
-        input3.Text = "input3";
-        // 
-        // input2
-        // 
-        input2.Location = new Point(3, 97);
-        input2.Name = "input2";
-        input2.Size = new Size(276, 29);
-        input2.TabIndex = 7;
-        input2.Text = "input2";
-        // 
-        // input1
-        // 
-        input1.Location = new Point(3, 29);
-        input1.Name = "input1";
-        input1.Size = new Size(285, 27);
-        input1.TabIndex = 6;
-        input1.Text = "input1";
+        txtPhoto.Location = new System.Drawing.Point(20, 514);
+        txtPhoto.Name = "txtPhoto";
+        txtPhoto.PlaceholderText = "Tên tệp ảnh (vd: avatar.png)";
+        txtPhoto.ReadOnly = true;
+        txtPhoto.Size = new System.Drawing.Size(392, 32);
+        txtPhoto.TabIndex = 14;
         // 
         // lblImage
         // 
-        lblImage.Location = new Point(5, 305);
+        lblImage.Font = new System.Drawing.Font("Segoe UI", 9F);
+        lblImage.Location = new System.Drawing.Point(20, 492);
         lblImage.Name = "lblImage";
-        lblImage.Size = new Size(147, 29);
-        lblImage.TabIndex = 5;
-        lblImage.Text = "Ảnh nhân viên:";
+        lblImage.Size = new System.Drawing.Size(150, 20);
+        lblImage.TabIndex = 13;
+        lblImage.Text = "Tên tệp ảnh:";
+        // 
+        // dpStartWorkDay
+        // 
+        dpStartWorkDay.Format = "dd/MM/yyyy";
+        dpStartWorkDay.Location = new System.Drawing.Point(20, 452);
+        dpStartWorkDay.Name = "dpStartWorkDay";
+        dpStartWorkDay.ReadOnly = true;
+        dpStartWorkDay.Size = new System.Drawing.Size(392, 32);
+        dpStartWorkDay.TabIndex = 12;
         // 
         // lblStartDate
         // 
-        lblStartDate.Location = new Point(10, 250);
+        lblStartDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+        lblStartDate.Location = new System.Drawing.Point(20, 430);
         lblStartDate.Name = "lblStartDate";
-        lblStartDate.Size = new Size(167, 29);
-        lblStartDate.TabIndex = 4;
+        lblStartDate.Size = new System.Drawing.Size(200, 20);
+        lblStartDate.TabIndex = 11;
         lblStartDate.Text = "Ngày bắt đầu làm việc:";
+        // 
+        // txtPhoneNumber
+        // 
+        txtPhoneNumber.Location = new System.Drawing.Point(20, 390);
+        txtPhoneNumber.MaxLength = 10;
+        txtPhoneNumber.Name = "txtPhoneNumber";
+        txtPhoneNumber.PlaceholderText = "09xxxxxxxx";
+        txtPhoneNumber.ReadOnly = true;
+        txtPhoneNumber.Size = new System.Drawing.Size(392, 32);
+        txtPhoneNumber.TabIndex = 10;
         // 
         // lblPhoneNumber
         // 
-        lblPhoneNumber.Location = new Point(7, 190);
+        lblPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 9F);
+        lblPhoneNumber.Location = new System.Drawing.Point(20, 368);
         lblPhoneNumber.Name = "lblPhoneNumber";
-        lblPhoneNumber.Size = new Size(94, 29);
-        lblPhoneNumber.TabIndex = 3;
+        lblPhoneNumber.Size = new System.Drawing.Size(150, 20);
+        lblPhoneNumber.TabIndex = 9;
         lblPhoneNumber.Text = "Số điện thoại:";
+        // 
+        // txtEmail
+        // 
+        txtEmail.Location = new System.Drawing.Point(20, 328);
+        txtEmail.Name = "txtEmail";
+        txtEmail.PlaceholderText = "example@domain.com";
+        txtEmail.ReadOnly = true;
+        txtEmail.Size = new System.Drawing.Size(392, 32);
+        txtEmail.TabIndex = 8;
         // 
         // lblEmail
         // 
-        lblEmail.Location = new Point(3, 136);
+        lblEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
+        lblEmail.Location = new System.Drawing.Point(20, 306);
         lblEmail.Name = "lblEmail";
-        lblEmail.Size = new Size(94, 20);
-        lblEmail.TabIndex = 2;
-        lblEmail.Text = "Email";
+        lblEmail.Size = new System.Drawing.Size(150, 20);
+        lblEmail.TabIndex = 7;
+        lblEmail.Text = "Email:";
+        // 
+        // txtFullName
+        // 
+        txtFullName.Location = new System.Drawing.Point(20, 266);
+        txtFullName.Name = "txtFullName";
+        txtFullName.PlaceholderText = "Nhập họ và tên...";
+        txtFullName.ReadOnly = true;
+        txtFullName.Size = new System.Drawing.Size(392, 32);
+        txtFullName.TabIndex = 6;
         // 
         // lblStaffName
         // 
-        lblStaffName.Location = new Point(3, 62);
+        lblStaffName.Font = new System.Drawing.Font("Segoe UI", 9F);
+        lblStaffName.Location = new System.Drawing.Point(20, 244);
         lblStaffName.Name = "lblStaffName";
-        lblStaffName.Size = new Size(94, 29);
-        lblStaffName.TabIndex = 1;
+        lblStaffName.Size = new System.Drawing.Size(150, 20);
+        lblStaffName.TabIndex = 5;
         lblStaffName.Text = "Họ và tên:";
+        // 
+        // txtStaffId
+        // 
+        txtStaffId.Location = new System.Drawing.Point(20, 204);
+        txtStaffId.Name = "txtStaffId";
+        txtStaffId.PlaceholderText = "Mã nhân viên (tự động)";
+        txtStaffId.ReadOnly = true;
+        txtStaffId.Size = new System.Drawing.Size(392, 32);
+        txtStaffId.TabIndex = 4;
         // 
         // lblStaffId
         // 
-        lblStaffId.Location = new Point(3, 3);
+        lblStaffId.Font = new System.Drawing.Font("Segoe UI", 9F);
+        lblStaffId.Location = new System.Drawing.Point(20, 182);
         lblStaffId.Name = "lblStaffId";
-        lblStaffId.Size = new Size(94, 20);
-        lblStaffId.TabIndex = 0;
-        lblStaffId.Text = "ID:";
+        lblStaffId.Size = new System.Drawing.Size(150, 20);
+        lblStaffId.TabIndex = 3;
+        lblStaffId.Text = "Mã nhân viên (ID):";
         // 
-        // input4
+        // btnSelectPhoto
         // 
-        input4.Location = new Point(6, 225);
-        input4.Name = "input4";
-        input4.Size = new Size(405, 29);
-        input4.TabIndex = 14;
-        input4.Text = "input4";
+        btnSelectPhoto.Enabled = false;
+        btnSelectPhoto.Location = new System.Drawing.Point(156, 144);
+        btnSelectPhoto.Name = "btnSelectPhoto";
+        btnSelectPhoto.Size = new System.Drawing.Size(120, 30);
+        btnSelectPhoto.TabIndex = 2;
+        btnSelectPhoto.Text = "Chọn ảnh...";
+        // 
+        // picAvatar
+        // 
+        picAvatar.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+        picAvatar.Location = new System.Drawing.Point(171, 46);
+        picAvatar.Name = "picAvatar";
+        picAvatar.Radius = 45;
+        picAvatar.Round = true;
+        picAvatar.Size = new System.Drawing.Size(90, 90);
+        picAvatar.TabIndex = 1;
+        picAvatar.Text = "Ảnh";
+        // 
+        // lblStaffForm
+        // 
+        lblStaffForm.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+        lblStaffForm.Location = new System.Drawing.Point(16, 14);
+        lblStaffForm.Name = "lblStaffForm";
+        lblStaffForm.Size = new System.Drawing.Size(400, 26);
+        lblStaffForm.TabIndex = 0;
+        lblStaffForm.Text = "THÔNG TIN CHI TIẾT";
         // 
         // MainView
         // 
-        AutoScaleDimensions = new SizeF(8F, 20F);
-        AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(1120, 665);
-        Controls.Add(panel1);
-        Controls.Add(btnCancel);
-        Controls.Add(btnEdit);
-        Controls.Add(btnSave);
-        Controls.Add(lblStaffForm);
+        AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        ClientSize = new System.Drawing.Size(1160, 664);
+        Controls.Add(panelDetail);
         Controls.Add(tblStaff);
         Controls.Add(lblTableName);
-        Name = "MainView";
-        Text = "Form1";
-        panel1.ResumeLayout(false);
+        Font = new System.Drawing.Font("Segoe UI", 9F);
+        MinimumSize = new System.Drawing.Size(1020, 680);
+        StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+        Text = "Quản Lý Nhân Viên";
+        panelDetail.ResumeLayout(false);
         ResumeLayout(false);
     }
 
@@ -242,22 +352,27 @@ partial class MainView
 
     private AntdUI.Label lblTableName;
     private AntdUI.Table tblStaff;
+    private AntdUI.Panel panelDetail;
     private AntdUI.Label lblStaffForm;
+    private AntdUI.Avatar picAvatar;
+    private AntdUI.Button btnSelectPhoto;
+    private AntdUI.Label lblStaffId;
+    private AntdUI.Input txtStaffId;
+    private AntdUI.Label lblStaffName;
+    private AntdUI.Input txtFullName;
+    private AntdUI.Label lblEmail;
+    private AntdUI.Input txtEmail;
+    private AntdUI.Label lblPhoneNumber;
+    private AntdUI.Input txtPhoneNumber;
+    private AntdUI.Label lblStartDate;
+    private AntdUI.DatePicker dpStartWorkDay;
+    private AntdUI.Label lblImage;
+    private AntdUI.Input txtPhoto;
+    private AntdUI.Button btnCancel;
     private AntdUI.Button btnEdit;
     private AntdUI.Button btnSave;
-    private AntdUI.Button btnCancel;
-    private AntdUI.Panel panel1;
-    private AntdUI.Label lblImage;
-    private AntdUI.Label lblStartDate;
-    private AntdUI.Label lblPhoneNumber;
-    private AntdUI.Label lblEmail;
-    private AntdUI.Label lblStaffName;
-    private AntdUI.Label lblStaffId;
-    private AntdUI.Input input2;
-    private AntdUI.Input input1;
-    private AntdUI.DatePicker datePicker1;
-    private AntdUI.Input input3;
-    private AntdUI.Image3D image3d1;
-    private AntdUI.Input input4;
-    private AntdUI.Button button3;
+    private AntdUI.Label lblErrorFullName;
+    private AntdUI.Label lblErrorEmail;
+    private AntdUI.Label lblErrorPhoneNumber;
+    private AntdUI.Label lblErrorPhoto;
 }

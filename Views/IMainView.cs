@@ -9,12 +9,12 @@ public interface IMainView
     
     event EventHandler<Staff>? UpdateEmployeeClicked;
 
-    void SetFieldError(string fieldName, string? errorMessage);
+    void SetFieldError(string propertyName, string? errorMessage);
     
-    // Dict<field_name, errorMessage>
+    // Dict<propertyName, errorMessage>
     void SetFieldError(Dictionary<string, string> validationErrors);
-    
-    void UpdateUpdateStatus(string message);
+
+    void UpdateChangeStatus(bool isSuccess, string message);
     
     void LoadStaffs(IReadOnlyList<Staff> staffs);
 }

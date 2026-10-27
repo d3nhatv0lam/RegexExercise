@@ -28,8 +28,7 @@ public class MainViewPresenter : IDisposable
     private void OnUpdateFieldChanged(object? sender, FieldChangedEventArgs e)
     {
         var errorMessage = ReflectionValidator.ValidateProperty(new Staff(), e.FieldName, e.Value);
-        if (errorMessage is not null)
-            _view.SetFieldError(e.FieldName, errorMessage);
+        _view.SetFieldError(e.FieldName, errorMessage);
     }
 
     private async void OnUpdateEmployeeClicked(object? sender, Staff staff)
@@ -38,18 +37,23 @@ public class MainViewPresenter : IDisposable
         if (errorMessages.Count > 0)
         {
             _view.SetFieldError(errorMessages);
+            _view.UpdateChangeStatus(false, "Cập nhật thất bại");
             return;
         }
 
         // update vào db
         var updated = await _staffRepository.Update(staff);
         if (updated)
+        {
             _view.LoadStaffs(await _staffRepository.GetAll());
+            _view.UpdateChangeStatus(true, "Cập nhật thành công");
+        }
     }
 
     public void Dispose()
     {
         _view.UpdateFieldChanged -= OnUpdateFieldChanged;
         _view.UpdateEmployeeClicked -= OnUpdateEmployeeClicked;
+        _view.Loaded -= OnViewLoaded;
     }
 }
