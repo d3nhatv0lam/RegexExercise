@@ -74,8 +74,16 @@ partial class MainView
         tblStaff.Gaps = new Size(8, 8);
         tblStaff.Location = new Point(16, 56);
         tblStaff.Name = "tblStaff";
-        tblStaff.Size = new Size(825, 625);
+        tblStaff.Size = new Size(806, 625);
         tblStaff.TabIndex = 1;
+        tblStaff.AutoSizeColumnsMode = AntdUI.ColumnsMode.Fill;
+        tblStaff.ShowTip = true;
+        tblStaff.Columns.Add(new AntdUI.Column("Id", "ID", AntdUI.ColumnAlign.Center) { Width = "5%", MinWidth = "50" });
+        tblStaff.Columns.Add(new AntdUI.Column("FullName", "Họ và Tên") { Width = "26%", Ellipsis = true });
+        tblStaff.Columns.Add(new AntdUI.Column("Email", "Email") { Width = "28%", Ellipsis = true });
+        tblStaff.Columns.Add(new AntdUI.Column("PhoneNumber", "Số Điện Thoại", AntdUI.ColumnAlign.Center) { Width = "13%", MaxWidth = "140" });
+        tblStaff.Columns.Add(new AntdUI.Column("StartWorkDay", "Ngày Vào Làm", AntdUI.ColumnAlign.Center) { Width = "14%", MaxWidth = "150", DisplayFormat = "yyyy-MM-dd" });
+        tblStaff.Columns.Add(new AntdUI.Column("Photo", "Ảnh") { Width = "14%", Ellipsis = true });
         // 
         // panelDetail
         // 
