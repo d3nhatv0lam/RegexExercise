@@ -9,12 +9,12 @@ public class Staff
 {
     [Key]
     [Required(ErrorMessage = "Id không được để trống")]
-    [RegexValidation(@"^\d+$", ErrorMessage = "Id phải là một số nguyên")]
     [Range(1, int.MaxValue, ErrorMessage = "Id phải là một số nguyên dương")]
     public int Id { get; set; }
 
     [Required(ErrorMessage = "Họ Tên không được để trống")]
     [StringLength(maximumLength: 100, MinimumLength = 1, ErrorMessage = "Tên phải có độ dài từ 1 đến 100 ký tự")]
+    [RegexValidation(@"^[\p{L}\s]+$", ErrorMessage = "Tên chỉ được chứa chữ cái và khoảng trắng")]
     public string FullName { get; set; }
 
     [Required(ErrorMessage = "Email không được để trống")]
@@ -22,7 +22,7 @@ public class Staff
     public string Email { get; set; }
 
     [Required(ErrorMessage = "Số điện thoại không được để trống")]
-    [RegexValidation(@"^0\d{9}$", ErrorMessage = "Số điện thoại phải bắt đầu bằng số 0 và có 10 chữ số.")]
+    [RegexValidation(@"^0\d{9}$", ErrorMessage = "SĐT phải bắt đầu bằng số 0 và có 10 chữ số.")]
     public string PhoneNumber { get; set; }
 
     [Required(ErrorMessage = "Ngày bắt đầu làm việc không được để trống")] 
