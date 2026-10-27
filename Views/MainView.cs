@@ -156,7 +156,7 @@ public partial class MainView : Form, IMainView
 
         if (ofd.ShowDialog() == DialogResult.OK)
         {
-            txtPhoto.Text = Path.GetFileName(ofd.FileName);
+            txtPhoto.Text = ofd.FileName;
             picAvatar.Image?.Dispose();
             picAvatar.Image = LoadImageWithoutLocking(ofd.FileName);
         }
